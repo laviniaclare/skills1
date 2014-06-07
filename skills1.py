@@ -93,7 +93,7 @@ def word_lengths(word_list):
 print "now testing word_lengths:"
 print word_lengths(['i','hi','bye'])
 
-Write a function (using iteration) that sums all the numbers in a list.
+#Write a function (using iteration) that sums all the numbers in a list.
 def sum_numbers(numbers):
 	i=0
 	for number in numbers:
