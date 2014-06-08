@@ -1,6 +1,6 @@
 # Things you should be able to do.
 
-# Write a function that takes a list (of numbers?)and returns a new list with only the odd numbers.
+# Write a function that takes a list (of numbers?) and returns a new list with only the odd numbers.
 def all_odd(some_list):
 	output=[]
 	for item in some_list:
@@ -41,13 +41,12 @@ print long_words(['hi','sup?','yo','yee','hyphy',"f'sho"])
 def smallest(some_list):
 	# sorted_list=sorted(some_list)
 	# return sorted_list[0]
-	large=[]
+	output=some_list[0]
 	for i in some_list:
-		for j in range(len(some_list)):
-			if i>some_list[j]:
-				large.append(i)
-	output=set(some_list)-set(large)
-	output=list(output)
+		if i<output:
+			 output=i
+	return output
+
 	return output[0]
 
 print "testing smallest:"
@@ -57,19 +56,18 @@ print smallest([42,3,55,4,7])
 
 # Write a function that finds the largest element in a list of integers and returns it.
 def largest(some_list):
-	small=[]
-	for i in some_list:
-		for j in range(len(some_list)):
-			if i<some_list[j]:
-				small.append(i)
-	output=set(some_list)-set(small)
-	output=list(output)
-	return output[0]
+	output=some_list[0]
+	for elem in some_list:
+		if elem>output:
+			output=elem
+	return output
+
 
 print"testing largest:"
 print largest([1,2,3,4,5,6,7,8,9,10])
 print largest([2,4,3,1,6,5,9])
 print largest([8,5,6,4,3,7,2])
+print largest([-5,-3,-2])
 
 # Write a function that takes a list of numbers and returns a new list of all those numbers divided by two.
 def halvesies(some_list):
@@ -109,12 +107,38 @@ print sum_numbers([-8,10,1])
 
 # Write a function that multiplies all the numbers in a list together.
 def mult_numbers(numbers):
-	return []
+	i=1
+	for number in numbers:
+		i=i*number
+	return i
+
+print "now testing mult_numbers:"
+print mult_numbers([3,3,3])
+print mult_numbers([1,4,3,6,8,3,7,0])
+print mult_numbers([10,2,5])
 
 # Write a function that joins all the strings in a list together (without using the join method) and returns a single string.
 def join_strings(string_list):
-	return ""
+	output=''
+	for word in string_list:
+		output=output+word+' '
+	return output
+
+print "now testing join_strings"
+print join_strings(['did','it','work?'])
 
 # Write a function that takes a list of integers and returns the average (without using the avg method)
 def average(numbers):
-	return None
+	length=0
+	for number in numbers:
+		length+=1
+
+	output=sum_numbers(numbers)/length
+	return output
+
+print "testing average:"
+print average([5,4,6,3,7,2,8,1,9])
+
+
+
+
